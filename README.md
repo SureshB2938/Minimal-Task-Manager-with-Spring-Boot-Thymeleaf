@@ -1,3 +1,5 @@
+
+
 # Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 A lightweight web-based task manager built with Spring Boot, Thymeleaf, and MySQL. Features include user login, task creation, due dates, priority levels, and tag filtering
 
@@ -51,6 +53,7 @@ CREATE DATABASE taskmanager;
 ### 3. Clone the repository:
 bash
 https://github.com/SureshB2938/Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
+
 cd Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 
 ### 4. Set Your Credentials
