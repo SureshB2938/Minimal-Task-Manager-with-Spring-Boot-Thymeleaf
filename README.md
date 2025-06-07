@@ -1,9 +1,9 @@
 
 
-# Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
+# Task-Manager-with-Spring-Boot-Thymeleaf
 A lightweight web-based task manager built with Spring Boot, Thymeleaf, and MySQL. Features include user login, task creation, due dates, priority levels, and tag filtering
 
-# 🧠 SmartTask – Minimal Task Manager with Spring Boot & Thymeleaf
+# 🧠 SmartTask – Task Manager with Spring Boot & Thymeleaf
 
 SmartTask is a lightweight, user-friendly task management web application built using **Spring Boot**, **Thymeleaf**, and **MySQL**. It allows users to manage tasks efficiently with features like due dates, priority levels, tag categorization, and a clean dashboard UI—all without using Spring Security or HTTP sessions.
 
@@ -52,7 +52,7 @@ CREATE DATABASE taskmanager;
 
 ### 3. Clone the repository:
 bash
-https://github.com/SureshB2938/Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
+https://github.com/SureshB2938/Task-Manager-with-Spring-Boot-Thymeleaf
 
 cd Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 
