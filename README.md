@@ -29,12 +29,27 @@ SmartTask is a lightweight, user-friendly task management web application built 
 | Build Tool   | Maven                |
 
 ---
+### ✅ Prerequisites
 
+- Java 17+
+- Maven
+- MySQL
+- Git
+
+## 🛠 Create MySQL Database
+
+1. **Start MySQL Server**  
+   - Make sure your MySQL server is running.  
+   - You can use tools like **XAMPP**, **MySQL Workbench**, or terminal.
+
+2. **Create the Database**
+
+```sql
+CREATE DATABASE taskmanager;
 ## ⚙️ Setup Instructions
 
 ### 1. Clone the repository:
 ```bash
 https://github.com/SureshB2938/Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
-
-
+cd Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 
