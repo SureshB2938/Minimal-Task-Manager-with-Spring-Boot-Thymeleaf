@@ -44,12 +44,12 @@ SmartTask is a lightweight, user-friendly task management web application built 
 
 2. **Create the Database**
 
-```sql
+sql
 CREATE DATABASE taskmanager;
 ## ⚙️ Setup Instructions
 
 ### 3. Clone the repository:
-```bash
+bash
 https://github.com/SureshB2938/Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 cd Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 
@@ -65,6 +65,5 @@ spring.datasource.password=your_mysql_password
 
 > ✅ Replace `your_mysql_username` and `your_mysql_password` with your actual MySQL username and password.
 
----
 
 
