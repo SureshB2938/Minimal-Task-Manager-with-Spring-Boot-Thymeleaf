@@ -69,7 +69,9 @@ spring.datasource.password=your_mysql_password
 > ✅ Replace `your_mysql_username` and `your_mysql_password` with your actual MySQL username and password.
 
 💻 Running the Application
+
 🔧 1. Open Command Prompt
+
 Navigate to the root folder of your project:
 
 ⚙️ 2. Build the Project
