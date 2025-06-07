@@ -54,7 +54,7 @@ CREATE DATABASE taskmanager;
 bash
 https://github.com/SureshB2938/Task-Manager-with-Spring-Boot-Thymeleaf
 
-cd Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
+cd Task-Manager-with-Spring-Boot-Thymeleaf
 
 ### 4. Set Your Credentials
 
