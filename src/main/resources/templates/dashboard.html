@@ -1,0 +1,128 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+    a.text-white:hover {
+        text-decoration: underline;
+        color: #f8f9fa !important;
+    }
+</style>
+
+</head>
+<body>
+<div class="container mt-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">📋 TaskManager</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav align-items-center">
+                <li class="nav-item me-3 text-white">
+                 <a th:href="@{/user-dashboard}" 
+   th:text="${user.username}" 
+   class="btn btn-primary fw-bold text-uppercase">
+</a>
+
+  </a>
+                </li>
+                <li class="nav-item">
+                    <a th:href="@{/logout}" class="btn btn-sm btn-light">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+  <h4 class="mb-3">📝 Task Manager</h4>
+
+<!-- Toggle Button -->
+<button class="btn btn-outline-primary mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#addTaskForm">
+    ➕ Add Task
+</button>
+
+<!-- Collapsible Form -->
+<div class="collapse" id="addTaskForm">
+    <form th:action="@{/add-task}" method="post" class="mb-4 p-4 bg-white rounded shadow-sm border">
+
+        <div class="mb-3">
+            <label for="title" class="form-label">Task Title</label>
+            <input type="text" id="title" name="title" placeholder="Enter task title" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea id="description" name="description" placeholder="Enter task description" class="form-control" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="dueDate" class="form-label">Due Date</label>
+            <input type="date" id="dueDate" name="dueDate" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label for="priority" class="form-label">Priority</label>
+            <select id="priority" name="priority" class="form-select">
+                <option value="LOW">Low</option>
+                <option value="MEDIUM" selected>Medium</option>
+                <option value="HIGH">High</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="tags" class="form-label">Tags (optional)</label>
+            <input type="text" id="tags" name="tags" class="form-control" placeholder="e.g., Work, Personal" />
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">➕ Add Task</button>
+    </form>
+</div>
+
+
+    <h4 class="mb-4">📋 Your Tasks</h4>
+
+<div th:if="${tasks.size() == 0}" class="alert alert-info">
+    No tasks found.
+</div>
+
+<ul class="list-group" th:each="task : ${tasks}">
+    <li class="list-group-item">
+        <div class="d-flex justify-content-between align-items-start flex-wrap">
+            <div style="flex: 1 1 auto;">
+                <h5 class="mb-1" th:text="${task.title}">Task Title</h5>
+                <p class="mb-1 text-muted" th:text="${task.description}">Description</p>
+                
+                <div class="d-flex flex-wrap gap-2 small">
+                    <span th:if="${task.dueDate != null}" class="badge bg-light text-dark">
+                        📅 Due: <span th:text="${task.dueDate}">2025-06-06</span>
+                    </span>
+
+                    <span th:if="${task.priority != null}"
+                          th:classappend="${task.priority == 'HIGH'} ? 'bg-danger' : (${task.priority == 'MEDIUM'} ? 'bg-warning text-dark' : 'bg-success')"
+                          class="badge">
+                        🔥 <span th:text="${task.priority}">High</span>
+                    </span>
+
+                    <span th:if="${task.tags != null}" class="badge bg-secondary">
+                        🏷️ <span th:text="${task.tags}">Tags</span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="d-flex flex-column gap-2 ms-3">
+                <a th:href="@{/edit-task/{id}(id=${task.id})}" class="btn btn-sm btn-outline-warning">Edit</a>
+                <a th:href="@{/delete-task/{id}(id=${task.id})}" class="btn btn-sm btn-outline-danger">Delete</a>
+            </div>
+        </div>
+    </li>
+</ul>
+
+</body>
+</html>
