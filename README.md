@@ -53,7 +53,7 @@ bash
 https://github.com/SureshB2938/Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 cd Minimal-Task-Manager-with-Spring-Boot-Thymeleaf
 
-### 3. Set Your Credentials
+### 4. Set Your Credentials
 
 Open the `src/main/resources/application.properties` file and update the credentials as per your MySQL setup:
 
@@ -65,5 +65,18 @@ spring.datasource.password=your_mysql_password
 
 > ✅ Replace `your_mysql_username` and `your_mysql_password` with your actual MySQL username and password.
 
+💻 Running the Application
+🔧 1. Open Command Prompt
+Navigate to the root folder of your project:
 
+⚙️ 2. Build the Project
 
+mvn clean install
+
+▶️ 3. Run the Application
+
+mvn spring-boot:run
+
+4. The app will start at:
+
+http://localhost:8080
